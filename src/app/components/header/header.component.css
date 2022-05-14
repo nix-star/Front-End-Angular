@@ -4,13 +4,12 @@
     background-image: url("/assets/pngtree-internet-life-shopping-cart-banner-blue-image_178879.jpg");
     height: 130px;
     position: relative;
+    margin-top: 15px;
 }
 
 h1 {
     color: antiquewhite;
     padding-left: 20px;
-    /* position: absolute; */
-    /* bottom: 20px; */
 }
 
 img {
@@ -19,4 +18,25 @@ img {
     position: absolute;
     bottom: -30px;
     left: 30px;
+}
+
+ul {
+    list-style: none;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+
+ul li {
+    display: inline-block;
+    margin: 2px;
+}
+
+i {
+    font-size: 24px;
+    color: gainsboro;
+}
+
+i:hover {
+    color: aqua;
 }
