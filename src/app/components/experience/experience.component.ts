@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DbService } from 'src/app/services/db.service';
 
 @Component({
   selector: 'app-experience',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExperienceComponent implements OnInit {
 
-  constructor() { }
+  //exps: string[] = ["Atención al cliente", "Atención telefónica", "Cajero", "Repositor"];
+  exps: string[];
+
+  constructor(private db: DbService) { }
 
   ngOnInit(): void {
+    this.getExp();
+  }
+
+  getExp(): void {
+    this.db.getExp().subscribe(exps => this.exps = exps);
   }
 
 }

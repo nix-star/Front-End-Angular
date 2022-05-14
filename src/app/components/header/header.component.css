@@ -2,15 +2,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url("/assets/pngtree-internet-life-shopping-cart-banner-blue-image_178879.jpg");
+    background-image: url("/assets/banner-blue.jpg");
     height: 130px;
-    position: relative;
     margin-top: 15px;
 }
 
 h1, h2 {
     color: antiquewhite;
-    padding-left: 20px;
+    /*padding-left: 20px;*/
 }
 
 h1 {

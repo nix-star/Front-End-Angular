@@ -1,0 +1,18 @@
+ul {
+    display: flex;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+}
+
+.btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+}
+
+i {
+    font-size: 12px;
+}

@@ -1,3 +1,9 @@
 <div class="container-box">
-    
+    <h3>Experiencia laboral</h3>
+
+    <ul *ngFor="let exp of exps" class="fa-ul">
+        <li><span class="fa-li"><i class="fa-solid fa-person-digging"></i></span>{{exp}}</li>
+    </ul>
+
+    <app-buttons></app-buttons>
 </div>
