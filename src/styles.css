@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+.container-box {
+    margin: 30px;
+    border: 2px solid grey;
+    border-radius: 10px;
+}

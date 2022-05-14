@@ -1,0 +1,22 @@
+.container-box {
+    display: flex;
+    align-items: center;
+    background-image: url("/assets/pngtree-internet-life-shopping-cart-banner-blue-image_178879.jpg");
+    height: 130px;
+    position: relative;
+}
+
+h1 {
+    color: antiquewhite;
+    padding-left: 20px;
+    /* position: absolute; */
+    /* bottom: 20px; */
+}
+
+img {
+    border-radius: 50%;
+    width: 5%;
+    position: absolute;
+    bottom: -30px;
+    left: 30px;
+}
