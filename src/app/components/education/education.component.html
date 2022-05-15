@@ -1,25 +1,35 @@
 <div class="container-box">
     <h3>Formación profesional</h3>
-    <h4>Educación formal</h4>
 
+    <h4>Educación formal</h4>
     <ul *ngFor="let edu of education.formal">
-        <li>Carrera: <span [ngStyle]="{'font-weight': 'bold', 'font-style': 'italic'}">{{edu.career}}</span></li>
+        <li >Carrera: <span class="text-secondary" [ngStyle]="{'font-weight': 'bold'}">{{edu.career}}</span></li>
         <li>Institución: <span [ngStyle]="{'font-style': 'italic'}">{{edu.academy}}</span></li>
         <li>Estado: <span 
-            [ngClass]="edu.status === 'Incompleto' ? 'text-danger': 'text-warning'" 
-            [ngStyle]="{'font-style': 'italic'}">{{edu.status}}</span></li>
-        <img src="{{edu.logo}}" alt="" width="32">
+            [ngClass]="edu.status === 'Incompleto' ? 'text-danger': 'text-warning'" >
+            {{edu.status}}</span></li>
+        <img src="{{edu.logo}}" alt="" width="32" 
+            [ngClass]="edu.career === 'Bioinformática' ? 'rounded-circle': ''">
         <app-buttons></app-buttons>
     </ul>
 
     <h4>Cursos</h4>
-    <h4>Idiomas</h4>
+    <ul *ngFor="let year of education.informal">
+        <li class="bold">{{year.year}}</li>
+        <ul *ngFor="let course of year.courses">
+            <li class="text-secondary bold">{{course.course}}</li>
+            <li [ngStyle]="{'font-style': 'italic'}">{{course.academy}}</li>
+            <br>
+        </ul>
+        <app-buttons></app-buttons>
+    </ul>
 
+    <h4>Idiomas</h4>
     <ul *ngFor="let lang of education.languages">
-        <li>Idioma: {{lang.language}}</li>
+        <li>Idioma: <span class="text-secondary bold">{{lang.language}}</span></li>
         <li>Nivel: {{lang.level}}</li>
         <img src="{{lang.flag}}" alt="" width="32">
         <app-buttons></app-buttons>
     </ul>
-    
+
 </div>

@@ -19,8 +19,8 @@ export class DbService {
     return this.http.get<string[]>(this.apiExp);
   }
 
-  getEdu(): Observable<any> {
-    return this.http.get<any>(this.apiEdu);
+  getEdu(): Observable<Object> {
+    return this.http.get<Object>(this.apiEdu);
   }
 
 }

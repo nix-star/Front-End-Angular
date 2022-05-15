@@ -13,3 +13,7 @@ ul img {
     left: -5px;
     top: 5px;
 }
+
+.bold {
+    font-weight: bold;
+}
