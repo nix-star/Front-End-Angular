@@ -5,5 +5,38 @@
       "Cajero", 
       "Repositor",
       "Cuidador"
-  ]
+  ],
+  "education": {
+    "formal": [
+      {
+        "academy": "Universidad Nacional de La Plata",
+        "logo": "/assets/logo_unlp.png",
+        "career": "Medicina",
+        "status": "En curso"
+      },
+      {
+        "academy": "Universidad Nacional de Quilmes",
+        "logo": "/assets/logo_unq.png",
+        "career": "Bioinformática",
+        "status": "Incompleto"
+      }
+    ],
+    "courses": [
+      {
+
+      }
+    ],
+    "languages": [
+      {
+        "language": "Inglés",
+        "level": "Intermedio-avanzado",
+        "flag": "/assets/United-Kingdom.png"
+      },
+      {
+        "language": "Portugués",
+        "level": "Básico",
+        "flag": "/assets/Portugal.png"
+      }
+    ]
+  }
 }

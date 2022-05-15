@@ -8,7 +8,6 @@ import { DbService } from 'src/app/services/db.service';
 })
 export class ExperienceComponent implements OnInit {
 
-  //exps: string[] = ["Atención al cliente", "Atención telefónica", "Cajero", "Repositor"];
   exps: string[];
 
   constructor(private db: DbService) { }

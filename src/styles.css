@@ -6,9 +6,13 @@
     border-radius: 10px;
     padding-left: 20px;
     padding-top: 10px;
-/*     padding-bottom: 5px;
- */}
+    background: linear-gradient(90deg, azure, gainsboro, azure);
+}
 
 body { 
     background: linear-gradient(90deg, skyblue, white, skyblue);
+}
+
+h3 {
+    color: cadetblue;
 }

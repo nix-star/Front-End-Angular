@@ -8,11 +8,19 @@ import { Observable, of } from 'rxjs';
 })
 export class DbService {
 
-  private apiExp: string = "http://localhost:5000/experience";
+  private port: number = 5000;
+  private apiUrl: string = `http://localhost:${this.port}`;
+  private apiExp: string = `${this.apiUrl}/experience`;
+  private apiEdu: string = `${this.apiUrl}/education`;
 
   constructor(private http: HttpClient) { }
 
   getExp(): Observable<string[]> {
     return this.http.get<string[]>(this.apiExp);
   }
+
+  getEdu(): Observable<any> {
+    return this.http.get<any>(this.apiEdu);
+  }
+
 }

@@ -1,0 +1,15 @@
+h4 {
+    font-size: 1.3rem;
+}
+
+ul {
+    list-style-type: none;
+    position: relative;
+    margin-left: 10px;
+}
+
+ul img {
+    position: absolute;
+    left: -5px;
+    top: 5px;
+}
