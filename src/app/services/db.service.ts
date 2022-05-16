@@ -12,6 +12,7 @@ export class DbService {
   private apiUrl: string = `http://localhost:${this.port}`;
   private apiExp: string = `${this.apiUrl}/experience`;
   private apiEdu: string = `${this.apiUrl}/education`;
+  private apiSki: string = `${this.apiUrl}/skills`;
 
   constructor(private http: HttpClient) { }
 
@@ -21,6 +22,10 @@ export class DbService {
 
   getEdu(): Observable<Object> {
     return this.http.get<Object>(this.apiEdu);
+  }
+
+  getSkills(): Observable<Object[]>{
+    return this.http.get<Object[]>(this.apiSki);
   }
 
 }

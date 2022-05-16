@@ -98,5 +98,47 @@
         "flag": "/assets/Portugal.png"
       }
     ]
-  }
+  },
+  "skills": [
+    {
+      "technology": "HTML5",
+      "logo": "/assets/logo_html5.png",
+      "level": 3
+    },
+    {
+      "technology": "Node.js",
+      "logo": "/assets/logo_nodejs.png",
+      "level": 2
+    },
+    {
+      "technology": "Angular",
+      "logo": "/assets/logo_angular.png",
+      "level": 2
+    },
+    {
+      "technology": "React",
+      "logo": "/assets/logo_react.png",
+      "level": 1
+    },
+    {
+      "technology": "Spring Boot",
+      "logo": "/assets/logo_spring.png",
+      "level": 2
+    },
+    {
+      "technology": "Ruby on Rails",
+      "logo": "/assets/logo_rails.png",
+      "level": 1
+    },
+    {
+      "technology": "Flask",
+      "logo": "/assets/logo_flask.png",
+      "level": 1
+    },
+    {
+      "technology": "heroku",
+      "logo": "/assets/logo_heroku.png",
+      "level": 2
+    }
+  ]
 }

@@ -11,6 +11,7 @@ import { EducationComponent } from './components/education/education.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ButtonsComponent } from './components/buttons/buttons.component';
+import { SkillCardComponent } from './components/skill-card/skill-card.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ButtonsComponent } from './components/buttons/buttons.component';
     EducationComponent,
     SkillsComponent,
     ProjectsComponent,
-    ButtonsComponent
+    ButtonsComponent,
+    SkillCardComponent
   ],
   imports: [
     BrowserModule,
