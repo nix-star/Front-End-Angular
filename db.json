@@ -117,7 +117,7 @@
     },
     {
       "technology": "React",
-      "logo": "/assets/logo_react.png",
+      "logo": "/assets/1024px-React.svg.png",
       "level": 1
     },
     {
@@ -131,14 +131,42 @@
       "level": 1
     },
     {
+      "technology": "Python",
+      "logo": "/assets/logo_python.png",
+      "level": 1
+    },
+    {
       "technology": "Flask",
       "logo": "/assets/logo_flask.png",
       "level": 1
     },
     {
-      "technology": "heroku",
+      "technology": "Heroku",
       "logo": "/assets/logo_heroku.png",
       "level": 2
+    },
+    {
+      "technology": "MySQL",
+      "logo": "/assets/logo_mysql.png",
+      "level": 2
+    },
+    {
+      "technology": "Linux",
+      "logo": "/assets/logo_linux.png",
+      "level": 2
+    },
+    {
+      "technology": "Jquery",
+      "logo": "/assets/logo_jquery.png",
+      "level": 1
+    }
+  ],
+  "projects": [
+    {
+      "name": "Librería Cervantes",
+      "description": "Sitio de ejemplo realizado con Node.js",
+      "url": "http://libreriacervantes.herokuapp.com",
+      "repo": "https://github.com/nix-star/libreriacervantes-node"
     }
   ]
 }

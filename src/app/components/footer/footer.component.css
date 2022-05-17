@@ -1,0 +1,15 @@
+.container-box {
+    margin-bottom: 0;
+    text-align: center;
+    background: #252fa2;
+    color: aliceblue;
+}
+
+a {
+    text-decoration: none;
+    color: lightblue;
+}
+
+a:hover {
+    color: #75aadb
+}

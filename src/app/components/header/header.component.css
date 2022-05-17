@@ -4,7 +4,7 @@
     justify-content: center;
     background-image: url("/assets/banner-blue.jpg");
     height: 130px;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 h1, h2 {
@@ -21,13 +21,27 @@ h2 {
     color: aquamarine;
 }
 
-img {
+.img img {
     border: 2px royalblue double;
     border-radius: 50%;
     width: 64px;
     position: absolute;
     bottom: -30px;
     left: 30px;    
+}
+
+.img-logo {
+    height: 100%;
+    width: 177px;
+    position: relative;
+    top: -5px;
+    left: -20px;
+}
+
+.img-logo img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
 
 ul {

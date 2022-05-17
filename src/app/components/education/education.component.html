@@ -6,7 +6,7 @@
         <li >Carrera: <span class="text-secondary fw-bold">{{edu.career}}</span></li>
         <li>Institución: <span class="fst-italic">{{edu.academy}}</span></li>
         <li>Estado: <span 
-            [ngClass]="edu.status === 'Incompleto' ? 'text-danger': 'text-warning'" >
+            [ngClass]="edu.status === 'Incompleto' ? 'text-danger': 'text-success'" >
             {{edu.status}}</span></li>
         <img src="{{edu.logo}}" alt="" width="32" 
             [ngClass]="edu.career === 'Bioinformática' ? 'rounded-circle': ''">

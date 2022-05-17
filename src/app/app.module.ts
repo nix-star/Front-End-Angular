@@ -12,6 +12,10 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ButtonsComponent } from './components/buttons/buttons.component';
 import { SkillCardComponent } from './components/skill-card/skill-card.component';
+import { ProjectCardComponent } from './components/project-card/project-card.component';
+
+import { SafePipe } from './safe-pipe';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,10 @@ import { SkillCardComponent } from './components/skill-card/skill-card.component
     SkillsComponent,
     ProjectsComponent,
     ButtonsComponent,
-    SkillCardComponent
+    SkillCardComponent,
+    ProjectCardComponent,
+    SafePipe,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

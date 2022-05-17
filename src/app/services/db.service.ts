@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHandler } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-//import { SrvRecord } from 'dns';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +12,7 @@ export class DbService {
   private apiExp: string = `${this.apiUrl}/experience`;
   private apiEdu: string = `${this.apiUrl}/education`;
   private apiSki: string = `${this.apiUrl}/skills`;
+  private apiPro: string = `${this.apiUrl}/projects`;
 
   constructor(private http: HttpClient) { }
 
@@ -26,6 +26,10 @@ export class DbService {
 
   getSkills(): Observable<Object[]>{
     return this.http.get<Object[]>(this.apiSki);
+  }
+
+  getProjects(): Observable<Object[]>{
+    return this.http.get<Object[]>(this.apiPro);
   }
 
 }
