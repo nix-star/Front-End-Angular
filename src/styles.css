@@ -16,4 +16,10 @@ body {
 h3 {
     /* color: cadetblue; */
     color: #252fa2;
+    font-weight: bold !important;
+    position: relative;
+}
+
+h4 {
+    font-weight: bold !important;
 }

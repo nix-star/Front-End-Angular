@@ -9,15 +9,22 @@ export class DbService {
 
   private port: number = 5000;
   private apiUrl: string = `http://localhost:${this.port}`;
-  private apiExp: string = `${this.apiUrl}/experience`;
+  private apiExp: string = `${this.apiUrl}/experience`;  
   private apiEdu: string = `${this.apiUrl}/education`;
   private apiSki: string = `${this.apiUrl}/skills`;
   private apiPro: string = `${this.apiUrl}/projects`;
 
+  //private apiExp: string = "http://localhost:5001/experience";
+  //private apiExp: string = "db2.json";
+
   constructor(private http: HttpClient) { }
 
-  getExp(): Observable<string[]> {
-    return this.http.get<string[]>(this.apiExp);
+  getExp(): Observable<Object[]> {
+    return this.http.get<Object[]>(this.apiExp);
+  }
+
+  addExp(str: Object): Observable<Object> {
+    return this.http.post<Object>(this.apiExp, str);
   }
 
   getEdu(): Observable<Object> {

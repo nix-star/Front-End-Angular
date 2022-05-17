@@ -8,7 +8,8 @@ import { DbService } from 'src/app/services/db.service';
 })
 export class ExperienceComponent implements OnInit {
 
-  exps: string[];
+  public exps: any[];
+  public obj: any;
 
   constructor(private db: DbService) { }
 
@@ -18,6 +19,21 @@ export class ExperienceComponent implements OnInit {
 
   getExp(): void {
     this.db.getExp().subscribe(exps => this.exps = exps);
+  }
+
+  add(): void{
+    //let index: number = this.exps[this.exps.length-1].id+1;
+    //let str: string|null = prompt("Ingrese un nuevo empleo", `Empleo ${index+1}`);
+    let str: string|null = prompt("Ingrese un nuevo empleo"); 
+    
+    this.obj = {
+      //"id": index,
+      "job": str
+    };
+
+    if(str!==null && str!=="") {
+      this.db.addExp(this.obj).subscribe(str => this.exps.push(str));
+    }
   }
 
 }

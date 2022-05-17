@@ -3,6 +3,8 @@
     text-align: center;
     background: #252fa2;
     color: aliceblue;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 a {

@@ -1,10 +1,25 @@
 {
   "experience": [
-      "Atención al cliente", 
-      "Atención telefónica", 
-      "Cajero", 
-      "Repositor",
-      "Cuidador"
+    {
+      "id": 0,
+      "job": "Atención al cliente"
+    },
+    {
+      "id": 1,
+      "job": "Atención telefónica"
+    },
+    {
+      "id": 2,
+      "job": "Cajero"
+    },
+    {
+      "id": 3,
+      "job": "Repositor"
+    },
+    {
+      "id": 4,
+      "job": "Cuidador"
+    }
   ],
   "education": {
     "formal": [
@@ -29,7 +44,6 @@
             "course": "Argentina Programa",
             "academy": "CESSI - INTI - Ministerio de Desarrollo Productivo"
           }
-
         ]
       },
       {
@@ -101,61 +115,73 @@
   },
   "skills": [
     {
+      "id": 0,
       "technology": "HTML5",
       "logo": "/assets/logo_html5.png",
       "level": 3
     },
     {
+      "id": 1,
       "technology": "Node.js",
       "logo": "/assets/logo_nodejs.png",
       "level": 2
     },
     {
+      "id": 2,
       "technology": "Angular",
       "logo": "/assets/logo_angular.png",
       "level": 2
     },
     {
+      "id": 3,
       "technology": "React",
       "logo": "/assets/1024px-React.svg.png",
       "level": 1
     },
     {
+      "id": 4,
       "technology": "Spring Boot",
       "logo": "/assets/logo_spring.png",
       "level": 2
     },
     {
+      "id": 5,
       "technology": "Ruby on Rails",
       "logo": "/assets/logo_rails.png",
       "level": 1
     },
     {
+      "id": 6,
       "technology": "Python",
       "logo": "/assets/logo_python.png",
       "level": 1
     },
     {
+      "id": 7,
       "technology": "Flask",
       "logo": "/assets/logo_flask.png",
       "level": 1
     },
     {
+      "id": 8,
       "technology": "Heroku",
       "logo": "/assets/logo_heroku.png",
       "level": 2
     },
     {
+      "id": 9,
       "technology": "MySQL",
       "logo": "/assets/logo_mysql.png",
       "level": 2
     },
     {
+      "id": 10,
       "technology": "Linux",
       "logo": "/assets/logo_linux.png",
       "level": 2
     },
     {
+      "id": 11,
       "technology": "Jquery",
       "logo": "/assets/logo_jquery.png",
       "level": 1
@@ -163,6 +189,7 @@
   ],
   "projects": [
     {
+      "id": 0,
       "name": "Librería Cervantes",
       "description": "Sitio de ejemplo realizado con Node.js",
       "url": "http://libreriacervantes.herokuapp.com",

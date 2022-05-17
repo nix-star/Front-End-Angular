@@ -16,6 +16,7 @@ import { ProjectCardComponent } from './components/project-card/project-card.com
 
 import { SafePipe } from './safe-pipe';
 import { FooterComponent } from './components/footer/footer.component';
+import { ButtonAddComponent } from './components/button-add/button-add.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FooterComponent } from './components/footer/footer.component';
     SkillCardComponent,
     ProjectCardComponent,
     SafePipe,
-    FooterComponent
+    FooterComponent,
+    ButtonAddComponent
   ],
   imports: [
     BrowserModule,
