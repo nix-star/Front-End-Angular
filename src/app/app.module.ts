@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
+import { SafePipe } from './safe-pipe';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -13,8 +14,6 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { ButtonsComponent } from './components/buttons/buttons.component';
 import { SkillCardComponent } from './components/skill-card/skill-card.component';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
-
-import { SafePipe } from './safe-pipe';
 import { FooterComponent } from './components/footer/footer.component';
 import { ButtonAddComponent } from './components/button-add/button-add.component';
 
@@ -32,7 +31,7 @@ import { ButtonAddComponent } from './components/button-add/button-add.component
     ProjectCardComponent,
     SafePipe,
     FooterComponent,
-    ButtonAddComponent
+    ButtonAddComponent,
   ],
   imports: [
     BrowserModule,

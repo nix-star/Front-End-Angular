@@ -5,15 +5,26 @@ h4 {
 ul {
     list-style-type: none;
     position: relative;
-    margin-left: 10px;
+    margin-left: -20px;
+    margin-right: 15px;
+    padding-left: 40px;
+    background-color: inherit;
 }
 
 ul img {
     position: absolute;
-    left: -5px;
+    left: 10px;
     top: 5px;
 }
 
 .bold {
     font-weight: bold;
+}
+
+.marked:nth-of-type(odd) {
+    background-color: white;
+}
+
+.formal, .languages{
+    padding-left: 50px;   
 }

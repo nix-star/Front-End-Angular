@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Experience } from '../Interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -19,12 +20,16 @@ export class DbService {
 
   constructor(private http: HttpClient) { }
 
-  getExp(): Observable<Object[]> {
-    return this.http.get<Object[]>(this.apiExp);
+  getExp(): Observable<Experience[]> {
+    return this.http.get<Experience[]>(this.apiExp);
   }
 
-  addExp(str: Object): Observable<Object> {
-    return this.http.post<Object>(this.apiExp, str);
+  addExp(str: Experience): Observable<Experience> {
+    return this.http.post<Experience>(this.apiExp, str);
+  }
+
+  removeExp(exp: Experience): Observable<Object> {
+    return this.http.delete<Experience>(`${this.apiExp}/${exp.id}`)
   }
 
   getEdu(): Observable<Object> {

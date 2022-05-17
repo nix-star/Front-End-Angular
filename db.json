@@ -17,8 +17,8 @@
       "job": "Repositor"
     },
     {
-      "id": 4,
-      "job": "Cuidador"
+      "job": "Cuidador",
+      "id": 4
     }
   ],
   "education": {
@@ -42,7 +42,7 @@
         "courses": [
           {
             "course": "Argentina Programa",
-            "academy": "CESSI - INTI - Ministerio de Desarrollo Productivo"
+            "academy": "CESSI | INTI | Ministerio de Desarrollo Productivo"
           }
         ]
       },
@@ -55,7 +55,7 @@
           },
           {
             "course": "Fullstack Node.js",
-            "academy": "UTN - Inclúyeme"
+            "academy": "UTN | Inclúyeme"
           }
         ]
       },
@@ -86,7 +86,7 @@
         "courses": [
           {
             "course": "Programación de robots básico",
-            "academy": "IBM - AMIA"
+            "academy": "IBM | AMIA"
           }
         ]
       },

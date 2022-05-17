@@ -13,6 +13,11 @@ body {
     background: linear-gradient(90deg, #75AADB, white, #75AADB);
 }
 
+hr {
+    margin: 0 16px 12px 0 !important;
+    height: 2px !important;
+}
+
 h3 {
     /* color: cadetblue; */
     color: #252fa2;

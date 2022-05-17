@@ -1,12 +1,13 @@
 <div class="container-box">
     <h3>Formación profesional</h3>
+    <hr>
 
     <h4>Educación formal</h4>
-    <ul *ngFor="let edu of education.formal">
-        <li >Carrera: <span class="text-secondary fw-bold">{{edu.career}}</span></li>
-        <li>Institución: <span class="fst-italic">{{edu.academy}}</span></li>
-        <li>Estado: <span 
-            [ngClass]="edu.status === 'Incompleto' ? 'text-danger': 'text-success'" >
+    <ul *ngFor="let edu of education.formal" class="marked formal">
+        <li ><span class="fw-bold">Carrera</span>: <span class="">{{edu.career}}</span></li>
+        <li><span class="fw-bold">Institución</span>: <span class="">{{edu.academy}}</span></li>
+        <li><span class="fw-bold">Estado</span>: <span 
+            [ngClass]="edu.status === 'Incompleto' ? 'text-danger': 'text-success'" class="fw-bold">
             {{edu.status}}</span></li>
         <img src="{{edu.logo}}" alt="" width="32" 
             [ngClass]="edu.career === 'Bioinformática' ? 'rounded-circle': ''">
@@ -14,20 +15,20 @@
     </ul>
 
     <h4>Cursos</h4>
-    <ul *ngFor="let year of education.informal">
+    <ul *ngFor="let year of education.informal" class="marked">
         <li class="fw-bold">{{year.year}}</li>
         <ul *ngFor="let course of year.courses">
-            <li class="text-secondary fw-bold">{{course.course}}</li>
-            <li class="fst-italic">{{course.academy}}</li>
+            <li [ngClass]="course.course == 'Argentina Programa' ? 'text-primary': ''">{{course.course}}</li>
+            <li class="text-secondary">{{course.academy}}</li>
             <br>
         </ul>
         <app-buttons></app-buttons>
     </ul>
 
     <h4>Idiomas</h4>
-    <ul *ngFor="let lang of education.languages">
-        <li>Idioma: <span class="text-secondary fw-bold">{{lang.language}}</span></li>
-        <li>Nivel: {{lang.level}}</li>
+    <ul *ngFor="let lang of education.languages" class="marked languages">
+        <li><span class="fw-bold">Idioma</span>: <span>{{lang.language}}</span></li>
+        <li><span class="fw-bold">Nivel</span>: <span class="">{{lang.level}}</span></li>
         <img src="{{lang.flag}}" alt="" width="32">
         <app-buttons></app-buttons>
     </ul>
