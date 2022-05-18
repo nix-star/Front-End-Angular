@@ -10,31 +10,30 @@ import { Experience } from 'src/app/Interfaces';
 export class ExperienceComponent implements OnInit {
 
   exps: Experience[];
-  index: number;
-
+  
   constructor(private db: DbService) { }
 
   ngOnInit(): void {
-    this.db.getExp().subscribe(exps => this.exps = exps);
-    /* this.getExp(); */
+    this.getExp();
   }
 
-  /* getExp(): void {
+  getLastId(): number {
+    if(this.exps.length === 0) return 0
+    else return this.exps[this.exps.length-1].id || 0;
+  }
+
+  getExp(): void {
     this.db.getExp().subscribe(exps => this.exps = exps);
   }
- */
-  add(): void{
-    //let longitud: number = this.exps.length;
-    let index: any = this.exps[this.exps.length-1].id;
-    index += 1;
-    //let str: string|null = prompt("Ingrese un nuevo valor", `Empleo ${index+1}`);
-    let str: string|null = prompt("Ingrese un nuevo valor", `Empleo ${index+1}`);
 
-    if(str!==null && str!=="") {
+  add(): void{  
+    let str: string|null = prompt("Ingrese un nuevo valor", `Empleo ${this.getLastId()+1}`);
+
+    if(typeof str === 'string' && str!==""){
       this.db.addExp({
-        "id": index,
+        "id": this.getLastId()+1,
         "job": str
-      }).subscribe(str => this.exps.push(str));
+      }).subscribe(exp => this.exps.push(exp));
     }
   }
 
@@ -43,9 +42,17 @@ export class ExperienceComponent implements OnInit {
     //let index: number = this.exps.filter(value => value.id === exp.id);
     let index: number = typeof exp.id === 'number' ? exp.id : -1;
     //if(typeof exp.id === 'number') index = exp.id;
-    this.db.removeExp(exp).subscribe(() => this.exps.splice(index, 1));
+
+    this.db.removeExp(exp).subscribe(() => {
+      this.exps.splice(index, 1);
+      this.getExp();
+    });
+    //this.exps.splice(index, 1);
+
     //this.db.removeExp(exp).subscribe(() => this.exps.filter(value => exp.id !== value.id));
     //this.getExp();
+    //this.exps.filter(value => exp.id !== value.id)
+    //this.db.getExp();    
   }
 
   edit(): void {

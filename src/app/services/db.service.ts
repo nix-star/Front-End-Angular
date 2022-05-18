@@ -15,9 +15,6 @@ export class DbService {
   private apiSki: string = `${this.apiUrl}/skills`;
   private apiPro: string = `${this.apiUrl}/projects`;
 
-  //private apiExp: string = "http://localhost:5001/experience";
-  //private apiExp: string = "db2.json";
-
   constructor(private http: HttpClient) { }
 
   getExp(): Observable<Experience[]> {

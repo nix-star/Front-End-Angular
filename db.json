@@ -1,24 +1,20 @@
 {
   "experience": [
     {
-      "id": 0,
-      "job": "Atención al cliente"
-    },
-    {
       "id": 1,
-      "job": "Atención telefónica"
+      "job": "Empleo 1"
     },
     {
       "id": 2,
-      "job": "Cajero"
+      "job": "Empleo 2"
     },
     {
       "id": 3,
-      "job": "Repositor"
+      "job": "Empleo 3"
     },
     {
-      "job": "Cuidador",
-      "id": 4
+      "id": 4,
+      "job": "Empleo 4"
     }
   ],
   "education": {

@@ -9,27 +9,22 @@ import { DbService } from 'src/app/services/db.service';
 export class SkillsComponent implements OnInit {
 
   skills: any[];
-  returnValue: string;
 
   constructor(private db: DbService) { }
 
   ngOnInit(): void {
-    this.getSkills();
-    console.log(this.skills);
-  }
-
-  getSkills(): void {
     this.db.getSkills().subscribe(skills => this.skills = skills);
   }
 
   showLevel(num: number): string {
+    let returnString: string = "";
 
-    if(num == 0) this.returnValue = "Sin conocimientos";
-    if(num == 1) this.returnValue = "Nivel básico";
-    if(num == 2) this.returnValue = "Nivel intermedio";
-    if(num == 3) this.returnValue = "Nivel avanzado";
+    if(num == 0) returnString = "Sin conocimientos";
+    if(num == 1) returnString = "Nivel básico";
+    if(num == 2) returnString = "Nivel intermedio";
+    if(num == 3) returnString = "Nivel avanzado";
 
-    return this.returnValue;
+    return returnString;
   }
 
 }
