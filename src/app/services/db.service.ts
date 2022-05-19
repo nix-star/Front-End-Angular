@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Experience, Project } from '../Interfaces';
 import { Skill } from '../Interfaces';
+import { User } from '../Interfaces';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,6 +16,8 @@ const httpOptions = {
 })
 export class DbService {
 
+  loggedIn: boolean = false
+
   private port: number = 5000;
   private apiUrl: string = `http://localhost:${this.port}`;
   private apiExp: string = `${this.apiUrl}/experience`;  
@@ -23,6 +26,10 @@ export class DbService {
   private apiPro: string = `${this.apiUrl}/projects`;
 
   constructor(private http: HttpClient) { }
+
+  getUser(id: number): Observable<User>{
+    return this.http.get<User>(`${this.apiUrl}/user/${id}`);
+  }
 
   getExp(): Observable<Experience[]> {
     return this.http.get<Experience[]>(this.apiExp);

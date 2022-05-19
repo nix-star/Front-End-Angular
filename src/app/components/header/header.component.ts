@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DbService } from 'src/app/services/db.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  profileImg: string;
+
+  constructor(public db: DbService) { }
 
   ngOnInit(): void {
+    this.db.getUser(1).subscribe(user => this.profileImg = user.img);
+  }
+
+  toggleLog(): void {
+    this.db.loggedIn = !this.db.loggedIn
+  }
+
+  changeImg(): void {
+    let aux: any = prompt("Ingresar la URL de la nueva imagen de perfil :: PNG | JPG | SVG");
+    if(typeof aux === 'string') this.profileImg = 
+      /(svg|png|jpg)$/gmi.test(aux) ? aux: this.profileImg;
   }
 
 }

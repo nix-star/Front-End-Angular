@@ -17,3 +17,12 @@ export interface Project {
     url: string,
     repo: string
 }
+
+export interface User {
+    id?: number,
+    name: string,
+    user: string,
+    password: string,
+    profesion: string,
+    img: string
+}

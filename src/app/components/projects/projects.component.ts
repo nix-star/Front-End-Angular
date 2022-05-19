@@ -34,7 +34,6 @@ export class ProjectsComponent implements OnInit {
 
   onSubmit(project: Project): void {
     this.db.addProject(project).subscribe(project => this.projects.push(project));
-
   }
 
 }

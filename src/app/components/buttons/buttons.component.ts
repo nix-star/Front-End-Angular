@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { DbService } from 'src/app/services/db.service';
 
 @Component({
   selector: 'app-buttons',
@@ -10,7 +11,7 @@ export class ButtonsComponent implements OnInit {
   @Output() delete = new EventEmitter<Event>();
   @Output() edit = new EventEmitter<Event>();
 
-  constructor() { }
+  constructor(public db: DbService) { }
 
   ngOnInit(): void {
   }
