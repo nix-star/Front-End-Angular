@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { DbService } from 'src/app/services/db.service';
 import { Skill } from 'src/app/Interfaces';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-skills',
@@ -12,7 +11,12 @@ import { FormsModule } from '@angular/forms';
 export class SkillsComponent implements OnInit {
 
   skills: Skill[];
-
+  newSkill: Skill = {
+    technology: "",
+    logo: "",
+    level: 0
+  };
+  
   constructor(private db: DbService, public modal: NgbModal) { }
 
   ngOnInit(): void {
@@ -28,6 +32,34 @@ export class SkillsComponent implements OnInit {
     if(num == 3) returnString = "Nivel avanzado";
 
     return returnString;
+  }
+
+  resetNewSkill(): void {
+    this.newSkill.technology = "";
+    this.newSkill.logo = "";
+    this.newSkill.level = 0;
+  }
+
+  add(skill: Skill): void {
+    this.db.addSkill(skill).subscribe(skill => this.skills.push(skill));
+  }
+
+  onSubmit(): void|boolean {
+    if(this.newSkill.technology===""||this.newSkill.logo==="") {
+      alert("FORMULARIO INCOMPLETO");
+      return false;
+    }
+
+    this.add(this.newSkill);
+
+    /* alert(`
+      TECNOLOGÍA: ${this.newSkill.technology}
+      LOGO: ${this.newSkill.logo}
+      NIVEL: ${this.showLevel(this.newSkill.level)}
+    `); */
+
+    this.resetNewSkill();
+    
   }
 
 }

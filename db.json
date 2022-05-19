@@ -107,73 +107,73 @@
   },
   "skills": [
     {
-      "id": 0,
+      "id": 1,
       "technology": "HTML5",
       "logo": "/assets/logo_html5.png",
       "level": 3
     },
     {
-      "id": 1,
+      "id": 2,
       "technology": "Node.js",
       "logo": "/assets/logo_nodejs.png",
       "level": 2
     },
     {
-      "id": 2,
+      "id": 3,
       "technology": "Angular",
       "logo": "/assets/logo_angular.png",
       "level": 2
     },
     {
-      "id": 3,
+      "id": 4,
       "technology": "React",
       "logo": "/assets/1024px-React.svg.png",
       "level": 1
     },
     {
-      "id": 4,
+      "id": 5,
       "technology": "Spring Boot",
       "logo": "/assets/logo_spring.png",
       "level": 2
     },
     {
-      "id": 5,
+      "id": 6,
       "technology": "Ruby on Rails",
       "logo": "/assets/logo_rails.png",
       "level": 1
     },
     {
-      "id": 6,
+      "id": 7,
       "technology": "Python",
       "logo": "/assets/logo_python.png",
       "level": 1
     },
     {
-      "id": 7,
+      "id": 8,
       "technology": "Flask",
       "logo": "/assets/logo_flask.png",
       "level": 1
     },
     {
-      "id": 8,
+      "id": 9,
       "technology": "Heroku",
       "logo": "/assets/logo_heroku.png",
       "level": 2
     },
     {
-      "id": 9,
+      "id": 10,
       "technology": "MySQL",
       "logo": "/assets/logo_mysql.png",
       "level": 2
     },
     {
-      "id": 10,
+      "id": 11,
       "technology": "Linux",
       "logo": "/assets/logo_linux.png",
       "level": 2
     },
     {
-      "id": 11,
+      "id": 12,
       "technology": "Jquery",
       "logo": "/assets/logo_jquery.png",
       "level": 1
@@ -181,7 +181,14 @@
   ],
   "projects": [
     {
-      "id": 0,
+      "id": 1,
+      "name": "Portafolio",
+      "description": "Miniatura de este sitio",
+      "url": "http://localhost:4200",
+      "repo": "https://github.com/nix-star/Front-End-Angular"
+    },
+    {
+      "id": 2,
       "name": "Librería Cervantes",
       "description": "Sitio de ejemplo realizado con Node.js",
       "url": "http://libreriacervantes.herokuapp.com",

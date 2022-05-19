@@ -4,3 +4,11 @@
     position: relative;
     left: -10px;
 }
+
+
+.modal-dialog {
+        width: 300px !important;
+        height: 600px !important;
+        /* margin: 1.75rem auto; */
+}
+

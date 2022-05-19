@@ -9,53 +9,64 @@
         [skill]="skill" [title]="showLevel(skill.level)"></app-skill-card>
     </div>
 
-    <ng-template #content let-modal>
-        <div class="modal-header">
-            <h4 class="h4 modal-title">Agregar habilidad</h4>
-            <div type="button" class="close" (click)="modal.dismiss()">
-                <i class="fa-solid fa-circle-xmark"></i>
-            </div>
-        </div>
-        <div class="modal-body">
-            <form action="" (submit)="modal.close()">
-                <fieldset class="mb-3">
-                    <label for="technology"></label>
-                    <input type="text" id="technology" name="technology" 
-                    placeholder="Introducir tecnología" required>
-                </fieldset>
-                
-                <fieldset class="mb-3">
-                    <label for="logo" class="fw-bold">Seleccionar imagen de logo</label>
-                    <input type="file" id="logo" name="logo" accept="image/png, image/jpeg" required>
-                </fieldset>
-
-                <fieldset>
-                    <label class="fw-bold">Seleccionar un nivel</label>
-                    <div>
-                        <input type="radio" id="sin" name="level" value=0 required>
-                        <label for="sin"><span class="ms-1">Sin conocimientos</span></label>
-                    </div>
-
-                    <div>
-                        <input type="radio" id="bas" name="level" value=1>
-                        <label for="bas"><span class="ms-1">Básico</span></label>
-                    </div>
-
-                    <div>
-                        <input type="radio" id="int" name="level" value=2>
-                        <label for="int"><span class="ms-1">Intermedio</span></label>
-                    </div>
-
-                    <div>
-                        <input type="radio" id="adv" name="level" value=3>
-                        <label for="adv"><span class="ms-1">Avanzado</span></label>
-                    </div>
-                </fieldset>
-
-                <input type="submit" class="btn btn-success mt-3" value="Enviar">
-            </form>
-        </div>
-        
-    </ng-template>
+    
     
 </div>
+
+
+<ng-template #content let-modal class="modal-lg">
+    <div class="modal-header">
+        <h4 class="h4 modal-title">Agregar habilidad</h4>
+        <div type="button" class="close" (click)="modal.dismiss()">
+            <i class="fa-solid fa-circle-xmark"></i>
+        </div>
+    </div>
+    <div class="modal-body">
+        <!-- <form action="" (submit)="modal.close()"> -->
+        <form action="" (ngSubmit)="modal.close()" >
+            <fieldset class="mb-3">
+                <label for="technology"></label>
+                <input type="text" id="technology" name="technology" [(ngModel)]="newSkill.technology" 
+                placeholder="Introducir tecnología" required>
+            </fieldset>
+
+            <fieldset class="mb-3">
+                <label for="logo" class="fw-bold">URL de la imagen del logo</label><br>
+                <input type="text" id="logo" name="logo" [(ngModel)]="newSkill.logo" accept="image/png, image/jpeg" required>
+            </fieldset>
+            
+            <!-- <fieldset class="mb-3">
+                <label for="logo" class="fw-bold">Seleccionar imagen de logo</label>
+                <input type="file" id="logo" name="logo" [(ngModel)]="newSkill.logo" accept="image/png, image/jpeg" required>
+            </fieldset> -->
+
+            <fieldset>
+                <label class="fw-bold">Seleccionar un nivel</label>
+                <div>
+                    <input type="radio" id="sin" name="level" 
+                    [(ngModel)]="newSkill.level" [value]=0 required>
+                    <label for="sin"><span class="ms-1">Sin conocimientos</span></label>
+                </div>
+
+                <div>
+                    <input type="radio" id="bas" name="level" 
+                    [(ngModel)]="newSkill.level" [value]=1>
+                    <label for="bas"><span class="ms-1">Básico</span></label>
+                </div>
+
+                <div>
+                    <input type="radio" id="int" name="level" 
+                    [(ngModel)]="newSkill.level" [value]=2>
+                    <label for="int"><span class="ms-1">Intermedio</span></label>
+                </div>
+
+                <div>
+                    <input type="radio" id="adv" name="level"
+                    [(ngModel)]="newSkill.level" [value]=3>
+                    <label for="adv"><span class="ms-1">Avanzado</span></label>
+                </div>
+            </fieldset>
+            <input type="submit" class="btn btn-success mt-3" value="Enviar" (click)="onSubmit()">
+        </form>
+    </div>
+</ng-template>

@@ -72,4 +72,8 @@ i:hover {
         width: 48px;
         bottom: -25px;
     }
+
+    .container-box {
+        margin-top: 3px;
+    }
 }

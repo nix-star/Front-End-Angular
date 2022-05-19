@@ -1,10 +1,10 @@
 <div class="container-box">
     <h3>Proyectos
-        <app-button-add></app-button-add>
+        <app-button-add (clic)="modal.open(content)"></app-button-add>
     </h3>
     <hr>
     
-    <div>
+    <div class="d-flex flex-wrap justify-content-evenly flex-container">
         <app-project-card
             *ngFor="let project of projects" 
             [name]="project.name"
@@ -14,3 +14,48 @@
         </app-project-card>
     </div>
 </div>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="h4 modal-title">Agregar proyecto</h4>
+        <div type="button" class="close" (click)="modal.dismiss()">
+            <i class="fa-solid fa-circle-xmark"></i>
+        </div>
+    </div>
+
+    <div class="modal-body">    
+        <form action="" (ngSubmit)="modal.close()">
+            <fieldset class="mb-3 me-2">
+                <label for="name" class="fw-bold row">
+                    <span class="col-5">Nombre del proyecto:</span>  
+                    <input class="col-7" type="text" id="name" name="name" [(ngModel)]="newProject.name">
+                </label>
+            </fieldset>
+
+            <fieldset class="mb-3 me-2">
+                <label for="description" class="fw-bold row">
+                    <span class="col-5">Descripción:</span>
+                    <input class="col-7" type="text" id="description" name="description" 
+                    [(ngModel)]="newProject.description">
+                </label>
+            </fieldset>
+            
+            <fieldset class="mb-3 me-2">                   
+                <label for="url" class="fw-bold row"> 
+                    <span class="col-5">URL:</span>
+                    <input class="col-7" type="text" id="url" name="url" [(ngModel)]="newProject.url">
+                </label>
+            </fieldset>
+
+            <fieldset class="mb-3 me-2">                   
+                <label for="url" class="fw-bold row">
+                    <span class="col-5">Repositorio: </span>
+                    <input class="col-7" type="text" id="repo" name="repo" [(ngModel)]="newProject.repo">
+                </label>
+            </fieldset>
+
+            <input type="submit" class="btn btn-success mt-3" value="Enviar" (click)="onSubmit(newProject)">
+        </form>
+    </div>
+
+</ng-template>

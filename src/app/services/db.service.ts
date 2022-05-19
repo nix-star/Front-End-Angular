@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Experience } from '../Interfaces';
+import { Experience, Project } from '../Interfaces';
 import { Skill } from '../Interfaces';
 
 const httpOptions = {
@@ -28,8 +28,8 @@ export class DbService {
     return this.http.get<Experience[]>(this.apiExp);
   }
 
-  addExp(str: Experience): Observable<Experience> {
-    return this.http.post<Experience>(this.apiExp, str);
+  addExp(exp: Experience): Observable<Experience> {
+    return this.http.post<Experience>(this.apiExp, exp);
   }
 
   removeExp(exp: Experience): Observable<Experience> {
@@ -48,8 +48,16 @@ export class DbService {
     return this.http.get<Skill[]>(this.apiSki);
   }
 
-  getProjects(): Observable<Object[]>{
-    return this.http.get<Object[]>(this.apiPro);
+  addSkill(skill: Skill): Observable<Skill> {
+    return this.http.post<Skill>(this.apiSki, skill);
+  }
+
+  getProjects(): Observable<Project[]>{
+    return this.http.get<Project[]>(this.apiPro);
+  }
+
+  addProject(project: Project): Observable<Project> {
+    return this.http.post<Project>(this.apiPro, project);
   }
 
 }
