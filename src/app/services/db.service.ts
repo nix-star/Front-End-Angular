@@ -1,7 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Experience } from '../Interfaces';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':'application/json'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +31,12 @@ export class DbService {
     return this.http.post<Experience>(this.apiExp, str);
   }
 
-  removeExp(exp: Experience): Observable<Object> {
-    return this.http.delete<Experience>(`${this.apiExp}/${exp.id}`)
+  removeExp(exp: Experience): Observable<Experience> {
+    return this.http.delete<Experience>(`${this.apiExp}/${exp.id}`);
+  }
+
+  updateExp(exp: Experience): Observable<Experience> {
+    return this.http.put<Experience>(`${this.apiExp}/${exp.id}`, exp, httpOptions);
   }
 
   getEdu(): Observable<Object> {

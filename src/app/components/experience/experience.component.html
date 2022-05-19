@@ -7,7 +7,7 @@
 
     <ul *ngFor="let exp of exps" class="fa-ul">
         <li><span class="fa-li"><i class="fa-solid fa-person-digging"></i></span>{{exp.job}}
-            <app-buttons (delete)="delete(exp)" (edit)="edit()"></app-buttons></li>
+            <app-buttons (delete)="delete(exp)" (edit)="edit(exp)"></app-buttons></li>
     </ul>
     
 </div>

@@ -17,46 +17,38 @@ export class ExperienceComponent implements OnInit {
     this.getExp();
   }
 
-  getLastId(): number {
-    if(this.exps.length === 0) return 0
-    else return this.exps[this.exps.length-1].id || 0;
-  }
-
   getExp(): void {
     this.db.getExp().subscribe(exps => this.exps = exps);
   }
 
+  getNextId(): number {
+    if(this.exps.length === 0) return 1
+    else return (this.exps[this.exps.length-1].id || -1)+1;
+  }
+
   add(): void{  
-    let str: string|null = prompt("Ingrese un nuevo valor", `Empleo ${this.getLastId()+1}`);
+    let str: string|null = prompt("Ingrese un nuevo valor", `Empleo ${this.getNextId()}`);
 
     if(typeof str === 'string' && str!==""){
       this.db.addExp({
-        "id": this.getLastId()+1,
+        "id": this.getNextId(),
         "job": str
       }).subscribe(exp => this.exps.push(exp));
     }
   }
 
   delete(exp: Experience): void {
-    //console.log("Delete funciona");
-    //let index: number = this.exps.filter(value => value.id === exp.id);
     let index: number = typeof exp.id === 'number' ? exp.id : -1;
-    //if(typeof exp.id === 'number') index = exp.id;
-
     this.db.removeExp(exp).subscribe(() => {
       this.exps.splice(index, 1);
       this.getExp();
     });
-    //this.exps.splice(index, 1);
-
-    //this.db.removeExp(exp).subscribe(() => this.exps.filter(value => exp.id !== value.id));
-    //this.getExp();
-    //this.exps.filter(value => exp.id !== value.id)
-    //this.db.getExp();    
   }
 
-  edit(): void {
-    console.log("Edit funciona");
+  edit(exp: Experience): void {
+    let aux: any = prompt("Modifique el valor", `${exp.job}`);
+    exp.job = typeof aux === 'string' ? aux : exp.job;
+    this.db.updateExp(exp).subscribe();
   }
 
 }
