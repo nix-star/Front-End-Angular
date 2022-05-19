@@ -18,6 +18,7 @@ import { SkillCardComponent } from './components/skill-card/skill-card.component
 import { ProjectCardComponent } from './components/project-card/project-card.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ButtonAddComponent } from './components/button-add/button-add.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ButtonAddComponent } from './components/button-add/button-add.component
     SafePipe,
     FooterComponent,
     ButtonAddComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
