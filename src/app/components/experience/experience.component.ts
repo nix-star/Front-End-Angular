@@ -27,7 +27,7 @@ export class ExperienceComponent implements OnInit {
   }
 
   add(): void{  
-    let str: string|null = prompt("Ingrese un nuevo valor", `Empleo ${this.getNextId()}`);
+    let str: string|null = prompt("Agregar un nuevo empleo", `Empleo ${this.getNextId()}`);
 
     if(typeof str === 'string' && str!==""){
       this.db.addExp({
@@ -46,7 +46,7 @@ export class ExperienceComponent implements OnInit {
   }
 
   edit(exp: Experience): void {
-    let aux: any = prompt("Modifique el valor", `${exp.job}`);
+    let aux: any = prompt("Modificar empleo", `${exp.job}`);
     exp.job = typeof aux === 'string' ? aux : exp.job;
     this.db.updateExp(exp).subscribe();
   }

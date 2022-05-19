@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Experience } from '../Interfaces';
+import { Skill } from '../Interfaces';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -43,8 +44,8 @@ export class DbService {
     return this.http.get<Object>(this.apiEdu);
   }
 
-  getSkills(): Observable<Object[]>{
-    return this.http.get<Object[]>(this.apiSki);
+  getSkills(): Observable<Skill[]>{
+    return this.http.get<Skill[]>(this.apiSki);
   }
 
   getProjects(): Observable<Object[]>{
