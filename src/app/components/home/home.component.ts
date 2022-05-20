@@ -13,7 +13,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.db.loginMenu = false;
     this.db.getUsers().subscribe(user => this.db.loggedIn = user[0].active); //HARDCODEADO
-    //this.db.getUser(1).subscribe(user => this.getStatus = user.active);
   }
 
 }

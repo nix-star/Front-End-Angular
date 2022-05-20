@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "argentinaprograma-frontend": {
+    "Front-End-Angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/argentinaprograma-frontend",
+            "outputPath": "dist/Front-End-Angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "argentinaprograma-frontend:build:production"
+              "browserTarget": "Front-End-Angular:build:production"
             },
             "development": {
-              "browserTarget": "argentinaprograma-frontend:build:development"
+              "browserTarget": "Front-End-Angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "argentinaprograma-frontend:build"
+            "browserTarget": "Front-End-Angular:build"
           }
         },
         "test": {
@@ -105,5 +105,5 @@
       }
     }
   },
-  "defaultProject": "argentinaprograma-frontend"
+  "defaultProject": "Front-End-Angular"
 }

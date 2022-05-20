@@ -9,12 +9,13 @@ import { DbService } from 'src/app/services/db.service';
 export class ButtonAddComponent implements OnInit {
 
   @Output() clic = new EventEmitter<Event>();
-  mostrar: boolean;
+  //mostrar: boolean;
 
   constructor(public db: DbService) { }
 
   ngOnInit(): void {
-    this.db.getUser(this.db.userId).subscribe(user => this.mostrar = user.active);
+    //this.db.getUser(this.db.userId).subscribe(user => this.mostrar = user.active);
+    this.db.getUser(this.db.userId).subscribe(user => this.db.loggedIn = user.active);
   }
 
   onAdd($event: Event): void {
