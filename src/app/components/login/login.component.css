@@ -1,0 +1,22 @@
+.login-form {
+    max-width: 480px;
+    min-height: 320px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    position: relative;
+    top: -30px;
+}
+
+@media (max-width: 540px){
+    .login-form {
+        margin-left: 32px;
+        margin-right: 32px;
+    }
+    
+}
+

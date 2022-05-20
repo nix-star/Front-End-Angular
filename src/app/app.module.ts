@@ -19,6 +19,7 @@ import { ProjectCardComponent } from './components/project-card/project-card.com
 import { FooterComponent } from './components/footer/footer.component';
 import { ButtonAddComponent } from './components/button-add/button-add.component';
 import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { LoginComponent } from './components/login/login.component';
     FooterComponent,
     ButtonAddComponent,
     LoginComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

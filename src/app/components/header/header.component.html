@@ -1,14 +1,15 @@
 <div class="container-box">
     <div class="img-logo">
         <img src="assets/APLogo-20-20.png" alt="">
-        <div *ngIf="db.loggedIn" class="cam"><i class="fa-solid fa-camera" (click)="changeImg()"></i></div>
+        <div *ngIf="db.loggedIn && !db.loginMenu" class="cam"><i class="fa-solid fa-camera" (click)="changeImg()"></i></div>
     </div>
-    <div class="img"><img src="{{profileImg}}" alt=""></div>
+    <div class="img" *ngIf="!db.loginMenu"><img src="{{profileImg}}" alt=""></div>
     <ul class="icon-container">
         <li><a href="https://www.facebook.com/nicolas.chiesa.5" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
         <li><a href="https://www.instagram.com/nicolaschiesa" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
         <li><a href="https://github.com/nix-star" target="_blank"><i class="fa-brands fa-github"></i></a></li>
         <li (click)="toggleLog()"><i class="fa-solid fa-circle-user" target="_blank" 
-            [title]="db.loggedIn ? 'Cerrar sesión': 'Iniciar sesión'"></i></li>
+            [title]="db.loggedIn ? 'Cerrar sesión': 'Iniciar sesión'"
+            *ngIf="!db.loginMenu"></i></li>
     </ul>
 </div>

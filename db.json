@@ -6,7 +6,8 @@
       "user": "nix",
       "password": "1234",
       "profesion": "Desarrollador Web",
-      "img": "/assets/profile.jpg"
+      "img": "/assets/profile.jpg",
+      "active": true
     }
   ],
   "experience": [

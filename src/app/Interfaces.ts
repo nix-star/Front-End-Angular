@@ -24,5 +24,6 @@ export interface User {
     user: string,
     password: string,
     profesion: string,
-    img: string
+    img: string,
+    active: boolean
 }

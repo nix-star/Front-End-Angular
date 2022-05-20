@@ -16,7 +16,8 @@ const httpOptions = {
 })
 export class DbService {
 
-  loggedIn: boolean = false
+  loggedIn: boolean;
+  loginMenu: boolean;
 
   private port: number = 5000;
   private apiUrl: string = `http://localhost:${this.port}`;
@@ -24,11 +25,24 @@ export class DbService {
   private apiEdu: string = `${this.apiUrl}/education`;
   private apiSki: string = `${this.apiUrl}/skills`;
   private apiPro: string = `${this.apiUrl}/projects`;
+  private apiUser: string = `${this.apiUrl}/user`
 
   constructor(private http: HttpClient) { }
 
+  getStatus(user: User): boolean {
+    return user.active;
+  }
+
+  changeStatus(user: User): Observable<User>{
+    return this.http.put<User>(`${this.apiUser}/${user.id}`, user, httpOptions);
+  }
+
   getUser(id: number): Observable<User>{
     return this.http.get<User>(`${this.apiUrl}/user/${id}`);
+  }
+
+  getUsers(): Observable<User[]>{
+    return this.http.get<User[]>(`${this.apiUrl}/user`);
   }
 
   getExp(): Observable<Experience[]> {

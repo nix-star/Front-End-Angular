@@ -1,1 +1,30 @@
-<p>login works!</p>
+<div class="container-box login-form" style="background: lightskyblue;">
+    <form action="" (ngSubmit)="onSubmit()" class="text-center">
+        <p class="fs-3 fw-bold text-primary">
+            Iniciar sessión
+        </p>
+
+        <p>
+            <label for="user"></label>
+            <input type="text" id="user" name="user" 
+                [(ngModel)]="user" placeholder="Ingresar usuario">
+        </p>
+
+        <p>
+            <label for="password"></label>
+            <input type="text" id="password" name="password" 
+                [(ngModel)]="password" placeholder="Ingresar contraseña">
+        </p>
+
+        <p class="fs-6 text-danger" *ngIf="loginError">
+            Usuario o contraseña incorrectos
+        </p>
+
+        <p>
+            <label for="submit"></label>
+            <input type="submit" name="submit" id="submit" class="btn btn-success" value="Siguiente">
+        </p>
+    </form>
+
+</div>
+
