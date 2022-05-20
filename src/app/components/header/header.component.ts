@@ -10,15 +10,18 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   profileImg: string;
+  mostrar: boolean;
 
   constructor(public db: DbService, private router: Router) { }
 
   ngOnInit(): void {
     this.db.getUser(1).subscribe(user => this.profileImg = user.img);
+    this.db.getUser(1).subscribe(user => this.mostrar = user.active);
   }
 
   toggleLog(): void {
     if(this.db.loggedIn) {
+      
       this.db.changeStatus({
         "id": 1,
         "name": "Nicolás Chiesa",
@@ -27,10 +30,12 @@ export class HeaderComponent implements OnInit {
         "profesion": "Desarrollador Web",
         "img": "/assets/profile.jpg",
         "active": false
-      }).subscribe();
-      this.db.loggedIn=false;
+      }).subscribe(()=>{
+        this.db.loggedIn=false;
+        window.location.reload();
+      });
+
     }
-    
     else this.router.navigate(['/login']);
 
   }

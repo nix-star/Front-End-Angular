@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DbService } from 'src/app/services/db.service';
 import { Experience } from 'src/app/Interfaces';
 

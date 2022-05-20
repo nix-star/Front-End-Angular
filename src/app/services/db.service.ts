@@ -18,6 +18,7 @@ export class DbService {
 
   loggedIn: boolean;
   loginMenu: boolean;
+  userId: number = 1;
 
   private port: number = 5000;
   private apiUrl: string = `http://localhost:${this.port}`;
@@ -28,10 +29,6 @@ export class DbService {
   private apiUser: string = `${this.apiUrl}/user`
 
   constructor(private http: HttpClient) { }
-
-  getStatus(user: User): boolean {
-    return user.active;
-  }
 
   changeStatus(user: User): Observable<User>{
     return this.http.put<User>(`${this.apiUser}/${user.id}`, user, httpOptions);

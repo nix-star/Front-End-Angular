@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
     if(this.datosIncorrectos()) this.loginError = true
     else {
       //HARDCODEADO
+      this.db.loggedIn = true;
       this.db.changeStatus({
         "id": 1,
         "name": "Nicolás Chiesa",
@@ -37,9 +38,7 @@ export class LoginComponent implements OnInit {
         "profesion": "Desarrollador Web",
         "img": "/assets/profile.jpg",
         "active": true
-    }).subscribe();
-      this.db.loggedIn = true;
-      this.router.navigate(['/']);
+    }).subscribe(() => this.router.navigate(['/']));
     }
   }
 

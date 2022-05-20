@@ -7,7 +7,7 @@
       "password": "1234",
       "profesion": "Desarrollador Web",
       "img": "/assets/profile.jpg",
-      "active": true
+      "active": false
     }
   ],
   "experience": [

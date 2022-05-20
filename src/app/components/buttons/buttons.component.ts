@@ -10,10 +10,12 @@ export class ButtonsComponent implements OnInit {
 
   @Output() delete = new EventEmitter<Event>();
   @Output() edit = new EventEmitter<Event>();
+  mostrar: boolean;
 
   constructor(public db: DbService) { }
 
   ngOnInit(): void {
+    this.db.getUser(this.db.userId).subscribe(user => this.mostrar = user.active);
   }
 
   onDelete($event: Event): void{
