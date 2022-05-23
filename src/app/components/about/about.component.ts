@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DbService } from 'src/app/services/db.service';
 import { User } from 'src/app/Interfaces';
-
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',

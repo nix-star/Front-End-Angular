@@ -7,13 +7,13 @@
         <p>
             <label for="user"></label>
             <input type="text" id="user" name="user" 
-                [(ngModel)]="user" placeholder="Ingresar usuario">
+                [(ngModel)]="loginUser" placeholder="Ingresar usuario">
         </p>
 
         <p>
             <label for="password"></label>
             <input type="text" id="password" name="password" 
-                [(ngModel)]="password" placeholder="Ingresar contraseña">
+                [(ngModel)]="loginPass" placeholder="Ingresar contraseña">
         </p>
 
         <p class="fs-6 text-danger" *ngIf="loginError">

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DbService } from 'src/app/services/db.service';
 import { Router } from '@angular/router';
+import { User } from 'src/app/Interfaces';
 
 @Component({
   selector: 'app-login',
@@ -9,36 +10,31 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  user: string = '';
-  password: string = '';
+  loginUser: string = '';
+  loginPass: string = '';
   loginError: boolean = false;
+  currentUser: User;
 
   constructor(private db: DbService, private router: Router) { }
 
   ngOnInit(): void {
     this.db.loginMenu = true;
+    this.db.getUser(this.db.userId).subscribe(user => this.currentUser = user)
   }
 
   datosIncorrectos(): boolean {
-    if(this.user !== 'nix') return true;
-    if(this.password !== '1234') return true;
+    //HARDCODEADO
+    if(this.loginUser !== 'nix') return true;
+    if(this.loginPass !== '1234') return true;
     return false;
   }
 
   onSubmit(): void {
     if(this.datosIncorrectos()) this.loginError = true
     else {
-      //HARDCODEADO
       this.db.loggedIn = true;
-      this.db.changeStatus({
-        "id": 1,
-        "name": "Nicolás Chiesa",
-        "user": "nix",
-        "password": "1234",
-        "profesion": "Desarrollador Web",
-        "img": "/assets/profile.jpg",
-        "active": true
-    }).subscribe(() => this.router.navigate(['/']));
+      this.currentUser.active = true;
+      this.db.changeStatus(this.currentUser).subscribe(() => this.router.navigate(['/']));
     }
   }
 

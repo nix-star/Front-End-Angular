@@ -20,8 +20,8 @@ export interface Project {
 
 export interface User {
     id?: number,
-    name: string,
     user: string,
+    name: string,
     password: string,
     profesion: string,
     img: string,

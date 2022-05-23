@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Experience, Project } from '../Interfaces';
-import { Skill } from '../Interfaces';
+import { Experience, Project, Skill } from '../Interfaces';
 import { User } from '../Interfaces';
 
 const httpOptions = {
@@ -22,24 +21,29 @@ export class DbService {
 
   private port: number = 5000;
   private apiUrl: string = `http://localhost:${this.port}`;
-  private apiExp: string = `${this.apiUrl}/experience`;  
+  private apiExp: string = `${this.apiUrl}/experience`;
+  //private apiUser: string = `${this.apiUrl}/user`
   private apiEdu: string = `${this.apiUrl}/education`;
   private apiSki: string = `${this.apiUrl}/skills`;
   private apiPro: string = `${this.apiUrl}/projects`;
-  private apiUser: string = `${this.apiUrl}/user`
+
+  private apiUser: string = `http://localhost:8080/user`
 
   constructor(private http: HttpClient) { }
 
   changeStatus(user: User): Observable<User>{
-    return this.http.put<User>(`${this.apiUser}/${user.id}`, user, httpOptions);
+    let params: string = `?name=${user.name}&user=${user.user}&password=${user.password}&profesion=${user.profesion}&img=${user.img}&active=${user.active}`;
+    return this.http.put<User>(`${this.apiUser}/edit/${user.id}${params}`, user, httpOptions);
   }
 
   getUser(id: number): Observable<User>{
-    return this.http.get<User>(`${this.apiUrl}/user/${id}`);
+    //return this.http.get<User>(`${this.apiUrl}/user/${id}`);
+    return this.http.get<User>(`${this.apiUser}/${id}`);
   }
 
   getUsers(): Observable<User[]>{
-    return this.http.get<User[]>(`${this.apiUrl}/user`);
+    //return this.http.get<User[]>(`${this.apiUrl}/user`);
+    return this.http.get<User[]>(`${this.apiUser}`);
   }
 
   getExp(): Observable<Experience[]> {

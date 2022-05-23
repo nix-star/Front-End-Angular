@@ -21,11 +21,23 @@ export class HeaderComponent implements OnInit {
     this.db.getUser(this.db.userId).subscribe(user => this.profileImg = user.img);
   }
 
-  toggleLog(): void {
+/*   toggleLog(): void {
     if(this.db.loggedIn) {
       this.currentUser.active = false;
       this.db.changeStatus(this.currentUser).subscribe(()=>{
         this.db.loggedIn=false;
+        window.location.reload();
+      });
+    }
+    else this.router.navigate(['/login']);
+
+  } */
+
+  toggleLog(): void {
+    if(this.db.loggedIn) {
+      this.db.loggedIn=false;
+      this.currentUser.active = false;
+      this.db.changeStatus(this.currentUser).subscribe(()=>{  
         window.location.reload();
       });
     }

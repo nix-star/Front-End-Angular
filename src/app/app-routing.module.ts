@@ -5,8 +5,8 @@ import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
 
-  { path: 'curriculum', component: HomeComponent },
-  { path: '', redirectTo: '/curriculum', pathMatch: 'full' },
+  { path: 'portfolio', component: HomeComponent },
+  { path: '', redirectTo: 'portfolio', pathMatch: 'full' },
   { path: 'login', component: LoginComponent }
   
 ];

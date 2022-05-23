@@ -2,8 +2,8 @@
   "user": [
     {
       "id": 1,
-      "name": "Nicolás Chiesa",
       "user": "nix",
+      "name": "Nicolás Chiesa",
       "password": "1234",
       "profesion": "Desarrollador Web",
       "img": "/assets/profile.jpg",
@@ -16,12 +16,12 @@
       "job": "Empleo 1"
     },
     {
-      "id": 2,
-      "job": "Empleo 2"
+      "id": 5,
+      "job": "Empleo 5"
     },
     {
-      "id": 3,
-      "job": "Empleo 3"
+      "id": 6,
+      "job": "Empleo 6"
     }
   ],
   "education": {
