@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Experience, Project, Skill } from '../Interfaces';
-import { User } from '../Interfaces';
+import { Observable, of } from 'rxjs';
+import { Experience, Project, Skill, User } from '../Interfaces';
+import { EDUCATION_LIST } from '../mock-education';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -18,12 +18,13 @@ export class DbService {
   loggedIn: boolean;
   loginMenu: boolean;
   userId: number = 1;
+  EDUCATION: Object = EDUCATION_LIST;
 
   private port: number = 5000;
   private apiUrl: string = `http://localhost:${this.port}`;
   private apiExp: string = `${this.apiUrl}/experience`;
   //private apiUser: string = `${this.apiUrl}/user`
-  private apiEdu: string = `${this.apiUrl}/education`;
+  //private apiEdu: string = `${this.apiUrl}/education`;
   private apiSki: string = `${this.apiUrl}/skills`;
   private apiPro: string = `${this.apiUrl}/projects`;
 
@@ -63,7 +64,8 @@ export class DbService {
   }
 
   getEdu(): Observable<Object> {
-    return this.http.get<Object>(this.apiEdu);
+    //return this.http.get<Object>(this.apiEdu); 
+    return of(EDUCATION_LIST);
   }
 
   getSkills(): Observable<Skill[]>{
