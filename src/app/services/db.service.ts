@@ -18,7 +18,6 @@ export class DbService {
   loggedIn: boolean;
   loginMenu: boolean;
   userId: number = 1;
-  EDUCATION: Object = EDUCATION_LIST;
 
   private port: number = 5000;
   private apiUrl: string = `http://localhost:${this.port}`;
