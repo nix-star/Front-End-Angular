@@ -24,11 +24,12 @@ export class DbService {
   //private apiUser: string = `${this.apiUrl}/user`
   //private apiExp: string = `${this.apiUrl}/experience`;
   //private apiEdu: string = `${this.apiUrl}/education`;
-  private apiSki: string = `${this.apiUrl}/skills`;
+  //private apiSki: string = `${this.apiUrl}/skills`;
   private apiPro: string = `${this.apiUrl}/projects`;
 
   private apiUser: string = `http://localhost:8080/user`
   private apiExp: string = `http://localhost:8080/experience`
+  private apiSki: string = `http://localhost:8080/skill`;
 
   constructor(private http: HttpClient) { }
 
@@ -80,11 +81,11 @@ export class DbService {
   }
 
   addSkill(skill: Skill): Observable<Skill> {
-    return this.http.post<Skill>(this.apiSki, skill);
+    return this.http.post<Skill>(this.apiSki + "/create", skill);
   }
 
   removeSkill(skill: Skill): Observable<Skill> {
-    return this.http.delete<Skill>(`${this.apiSki}/${skill.id}`);
+    return this.http.delete<Skill>(`${this.apiSki}/delete/${skill.id}`);
   }
 
 

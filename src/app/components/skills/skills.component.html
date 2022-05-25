@@ -27,7 +27,6 @@
         </div>
     </div>
     <div class="modal-body">
-        <!-- <form action="" (submit)="modal.close()"> -->
         <form action="" (ngSubmit)="modal.close()" >
             <fieldset class="mb-3">
                 <label for="technology"></label>
@@ -39,11 +38,6 @@
                 <label for="logo" class="fw-bold">URL de la imagen del logo</label><br>
                 <input type="text" id="logo" name="logo" [(ngModel)]="newSkill.logo" accept="image/png, image/jpeg" required>
             </fieldset>
-            
-            <!-- <fieldset class="mb-3">
-                <label for="logo" class="fw-bold">Seleccionar imagen de logo</label>
-                <input type="file" id="logo" name="logo" [(ngModel)]="newSkill.logo" accept="image/png, image/jpeg" required>
-            </fieldset> -->
 
             <fieldset>
                 <label class="fw-bold">Seleccionar un nivel</label>
@@ -71,6 +65,7 @@
                     <label for="adv"><span class="ms-1">Avanzado</span></label>
                 </div>
             </fieldset>
+            
             <input type="submit" class="btn btn-success mt-3" value="Enviar" (click)="onSubmit()">
         </form>
     </div>

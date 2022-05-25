@@ -27,6 +27,13 @@ export class SkillsComponent implements OnInit {
     this.db.getSkills().subscribe(skills => this.skills = skills);
   }
 
+  actualizar(): void {
+    setTimeout(()=>this.getSkills(), 200);
+    setTimeout(()=>this.getSkills(), 500);
+    setTimeout(()=>this.getSkills(), 1000);
+    setTimeout(()=>this.getSkills(), 3000);
+  }
+
   showLevel(num: number): string {
     let returnString: string = "";
 
@@ -45,15 +52,20 @@ export class SkillsComponent implements OnInit {
   }
 
   add(skill: Skill): void {
-    this.db.addSkill(skill).subscribe(skill => this.skills.push(skill));
+    this.db.addSkill(skill).subscribe();
+    
+    this.actualizar();
   }
 
   delete(skill: Skill): void {
     let index: number = typeof skill.id === 'number' ? skill.id : -1;
     this.db.removeSkill(skill).subscribe(() => {
-      this.skills.splice(index, 1);
-      this.getSkills();
+      //this.skills.splice(index, 1);
+      //this.getSkills();
     });
+    /* this.skills.splice(index, 1);
+    this.getSkills(); */
+    this.actualizar();
   }
 
   onSubmit(): void|boolean {
