@@ -20,6 +20,10 @@ export class SkillsComponent implements OnInit {
   constructor(private db: DbService, public modal: NgbModal) { }
 
   ngOnInit(): void {
+    this.getSkills()
+  }
+
+  getSkills(): void {
     this.db.getSkills().subscribe(skills => this.skills = skills);
   }
 
@@ -42,6 +46,14 @@ export class SkillsComponent implements OnInit {
 
   add(skill: Skill): void {
     this.db.addSkill(skill).subscribe(skill => this.skills.push(skill));
+  }
+
+  delete(skill: Skill): void {
+    let index: number = typeof skill.id === 'number' ? skill.id : -1;
+    this.db.removeSkill(skill).subscribe(() => {
+      this.skills.splice(index, 1);
+      this.getSkills();
+    });
   }
 
   onSubmit(): void|boolean {

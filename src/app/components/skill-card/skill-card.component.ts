@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-skill-card',
@@ -8,6 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SkillCardComponent implements OnInit {
 
   @Input() skill: any;
+  @Output() deleteSkill = new EventEmitter<Event>();
+  show: boolean;
 
   constructor() { }
 
@@ -16,6 +18,10 @@ export class SkillCardComponent implements OnInit {
 
   anchoBarra(num: number): string {
     return (num*33.333333).toString() + "%";
+  }
+
+  onDelete($event: Event){
+    this.deleteSkill.emit($event);
   }
 
 }

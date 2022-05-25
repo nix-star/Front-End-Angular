@@ -21,6 +21,14 @@ export class ExperienceComponent implements OnInit {
     this.db.getExp().subscribe(exps => this.exps = exps);
   }
 
+  actualizar(): void {
+    setTimeout(()=>this.getExp(), 200);
+    setTimeout(()=>this.getExp(), 500);
+    setTimeout(()=>this.getExp(), 1000);
+    setTimeout(()=>this.getExp(), 2000);
+    setTimeout(()=>this.getExp(), 5000);
+  }
+
   getNextId(): number {
     if(this.exps.length === 0) return 1
     else return (this.exps[this.exps.length-1].id || -1)+1;
@@ -30,19 +38,25 @@ export class ExperienceComponent implements OnInit {
     let str: string|null = prompt("Agregar un nuevo empleo", `Empleo ${this.getNextId()}`);
 
     if(typeof str === 'string' && str!==""){
-      this.db.addExp({
+      let newExp: Experience = {
         "id": this.getNextId(),
         "job": str
-      }).subscribe(exp => this.exps.push(exp));
+      }
+      this.db.addExp(newExp).subscribe();
+      this.exps.push(newExp);
     }
+
   }
 
   delete(exp: Experience): void {
-    let index: number = typeof exp.id === 'number' ? exp.id : -1;
-    this.db.removeExp(exp).subscribe(() => {
+    //let index: number = typeof exp.id === 'number' ? exp.id : -1;
+    /* this.db.removeExp(exp).subscribe(() => {
       this.exps.splice(index, 1);
       this.getExp();
-    });
+    }); */
+    //this.exps.splice(index, 1);
+    this.db.removeExp(exp).subscribe();
+    this.actualizar();
   }
 
   edit(exp: Experience): void {

@@ -10,7 +10,6 @@ export class ButtonsComponent implements OnInit {
 
   @Output() delete = new EventEmitter<Event>();
   @Output() edit = new EventEmitter<Event>();
-  //mostrar: boolean;
 
   constructor(public db: DbService) { }
 
