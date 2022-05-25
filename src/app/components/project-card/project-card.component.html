@@ -5,6 +5,7 @@
         <p>{{description}}</p>
         <iframe [src] = "url | safe" width="{{ratio*9}}" height="{{ratio*16}}"></iframe>
         <a [href]="repo"><i class="fa-brands fa-github"></i></a>
+        <a href="" *ngIf="db.loggedIn" (click)="delProj($event)"><i class="fa-solid fa-trash-can"></i></a>
     </div>
 
 </div>

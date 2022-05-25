@@ -10,7 +10,8 @@
             [name]="project.name"
             [description]="project.description"
             [url]="project.url"
-            [repo]="project.repo">
+            [repo]="project.repo"
+            (cardEmit)="delete(project, $event)">
         </app-project-card>
     </div>
 </div>
@@ -18,13 +19,13 @@
 <ng-template #content let-modal>
     <div class="modal-header">
         <h4 class="h4 modal-title">Agregar proyecto</h4>
-        <div type="button" class="close" (click)="modal.dismiss()">
+        <div type="button" class="close" (click)="modal.close()">
             <i class="fa-solid fa-circle-xmark"></i>
         </div>
     </div>
 
     <div class="modal-body">    
-        <form action="" (ngSubmit)="modal.close()">
+        <form action="" (ngSubmit)="modal.dismiss()">
             <fieldset class="mb-3 me-2">
                 <label for="name" class="fw-bold row">
                     <span class="col-5">Nombre del proyecto:</span>  
@@ -54,7 +55,12 @@
                 </label>
             </fieldset>
 
-            <input type="submit" class="btn btn-success mt-3" value="Enviar" (click)="onSubmit(newProject)">
+            <fieldset>
+                <input type="submit" class="btn btn-success mt-3" value="Enviar" (click)="onSubmit(newProject)">
+                <input type="button" class="btn btn-danger mt-3 ms-3" value="Cancelar" (click)="modal.close()">
+            </fieldset>
+
+            
         </form>
     </div>
 

@@ -19,34 +19,26 @@ export class DbService {
   loginMenu: boolean;
   userId: number = 1;
 
-  private port: number = 5000;
-  private apiUrl: string = `http://localhost:${this.port}`;
-  //private apiUser: string = `${this.apiUrl}/user`
-  //private apiExp: string = `${this.apiUrl}/experience`;
-  //private apiEdu: string = `${this.apiUrl}/education`;
-  //private apiSki: string = `${this.apiUrl}/skills`;
-  private apiPro: string = `${this.apiUrl}/projects`;
-
-  private apiUser: string = `http://localhost:8080/user`
-  private apiExp: string = `http://localhost:8080/experience`
-  private apiSki: string = `http://localhost:8080/skill`;
+  private apiUrl: string = `http://localhost:8080`;
+  private apiUsr: string = `${this.apiUrl}`
+  private apiExp: string = `${this.apiUrl}/experience`
+  private apiSki: string = `${this.apiUrl}/skill`;
+  private apiPro: string = `${this.apiUrl}/project`;
 
   constructor(private http: HttpClient) { }
 
   /**User service**/
   changeStatus(user: User): Observable<User>{
     let params: string = `?name=${user.name}&user=${user.user}&password=${user.password}&profesion=${user.profesion}&img=${user.img}&active=${user.active}`;
-    return this.http.put<User>(`${this.apiUser}/edit/${user.id}${params}`, user, httpOptions);
+    return this.http.put<User>(`${this.apiUsr}/edit/${user.id}${params}`, user, httpOptions);
   }
 
   getUser(id: number): Observable<User>{
-    //return this.http.get<User>(`${this.apiUrl}/user/${id}`);
-    return this.http.get<User>(`${this.apiUser}/${id}`);
+    return this.http.get<User>(`${this.apiUsr}/${id}`);
   }
 
   getUsers(): Observable<User[]>{
-    //return this.http.get<User[]>(`${this.apiUrl}/user`);
-    return this.http.get<User[]>(`${this.apiUser}`);
+    return this.http.get<User[]>(`${this.apiUsr}`);
   }
 
 
@@ -95,7 +87,11 @@ export class DbService {
   }
 
   addProject(project: Project): Observable<Project> {
-    return this.http.post<Project>(this.apiPro, project);
+    return this.http.post<Project>(this.apiPro + "/create", project);
+  }
+
+  removeProject(project: Project): Observable<Project> {
+    return this.http.delete<Project>(`${this.apiPro}/delete/${project.id}`);  
   }
 
 }

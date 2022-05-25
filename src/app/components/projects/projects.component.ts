@@ -28,12 +28,22 @@ export class ProjectsComponent implements OnInit {
     this.db.getProjects().subscribe(projects => this.projects = projects);
   }
 
-  add(): void {
+  actualizar(): void {
+    setTimeout(() => this.getProjects(), 300);
+    setTimeout(() => this.getProjects(), 600);
+    setTimeout(() => this.getProjects(), 900);
+  }
 
+  delete(project: Project, event: Event): void {
+    event.preventDefault();
+    this.db.removeProject(project).subscribe();
+    this.actualizar();
   }
 
   onSubmit(project: Project): void {
-    this.db.addProject(project).subscribe(project => this.projects.push(project));
+    this.db.addProject(project).subscribe();
+    //this.projects.push(project);
+    this.actualizar();
   }
 
 }

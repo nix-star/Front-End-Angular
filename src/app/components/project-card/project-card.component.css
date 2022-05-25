@@ -16,3 +16,11 @@ a {
     right: 5px;
     top: 5px;
 }
+
+.fa-trash-can {
+    position: absolute;
+    right: 23px;
+    top: 5px;
+    /*color: #0d6efd;*/
+}
+
