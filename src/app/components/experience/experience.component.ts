@@ -49,12 +49,6 @@ export class ExperienceComponent implements OnInit {
   }
 
   delete(exp: Experience): void {
-    //let index: number = typeof exp.id === 'number' ? exp.id : -1;
-    /* this.db.removeExp(exp).subscribe(() => {
-      this.exps.splice(index, 1);
-      this.getExp();
-    }); */
-    //this.exps.splice(index, 1);
     this.db.removeExp(exp).subscribe();
     this.actualizar();
   }

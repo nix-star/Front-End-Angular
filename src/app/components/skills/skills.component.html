@@ -9,8 +9,8 @@
             *ngFor="let skill of skills" 
             (deleteSkill)="delete(skill)"
             [skill]="skill" 
-            [title]="showLevel(skill.level)">
-            [show]="db.loggedIn"
+            [title]="showLevel(skill.level)"
+            [show]="db.loggedIn">
         </app-skill-card>
     </div>
 

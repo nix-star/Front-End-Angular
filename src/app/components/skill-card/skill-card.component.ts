@@ -8,9 +8,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class SkillCardComponent implements OnInit {
 
   @Input() skill: any;
+  @Input() show: boolean;
   @Output() deleteSkill = new EventEmitter<Event>();
-  show: boolean;
-
+  
   constructor() { }
 
   ngOnInit(): void {

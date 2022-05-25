@@ -17,7 +17,7 @@ export class SkillsComponent implements OnInit {
     level: 0
   };
   
-  constructor(private db: DbService, public modal: NgbModal) { }
+  constructor(public db: DbService, public modal: NgbModal) { }
 
   ngOnInit(): void {
     this.getSkills()
