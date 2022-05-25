@@ -21,8 +21,10 @@ export class HeaderComponent implements OnInit {
     this.db.getUser(this.db.userId).subscribe(user => this.profileImg = user.img);
   }
 
-  toggleLog(): void {
-    if(this.db.loggedIn) {
+  toggleLog(): boolean {
+    if(this.db.loggedIn) {  
+      let confirmar: Boolean = confirm("¿Deseas salir?");
+      if(!confirmar) return false;
       this.db.loggedIn=false;
       this.currentUser.active = false;
       this.db.changeStatus(this.currentUser).subscribe(()=>{  
@@ -30,7 +32,7 @@ export class HeaderComponent implements OnInit {
       });
     }
     else this.router.navigate(['/login']);
-
+    return true;
   }
 
   changeImg(): void {
