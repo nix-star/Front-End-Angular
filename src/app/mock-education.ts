@@ -89,4 +89,4 @@ export const EDUCATION_LIST = {
         "flag": "/assets/Portugal.png"
       }
     ]
-}  
+}
