@@ -20,7 +20,7 @@ export class DbService {
   userId: number = 1;
 
   private apiUrl: string = `http://localhost:8080`;
-  private apiUsr: string = `${this.apiUrl}`
+  private apiUsr: string = `${this.apiUrl}/user`
   private apiExp: string = `${this.apiUrl}/experience`
   private apiSki: string = `${this.apiUrl}/skill`;
   private apiPro: string = `${this.apiUrl}/project`;
