@@ -19,7 +19,7 @@ export class DbService {
   loginMenu: boolean;
   userId: number = 1;
 
-  private apiUrl: string = `http://localhost:8080`;
+  private apiUrl: string = `https://ap-back-end-springboot.herokuapp.com/`;
   private apiUsr: string = `${this.apiUrl}`
   private apiExp: string = `${this.apiUrl}/experience`
   private apiSki: string = `${this.apiUrl}/skill`;
